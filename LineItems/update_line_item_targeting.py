@@ -41,15 +41,16 @@ def get_line_items(service, order_id):
     # Get line items by statement.
     response = service.getLineItemsByStatement(
       statement.ToStatement())
+    
     if 'results' in response and len(response['results']):
-        # Update each local line item by changing its delivery rate type.
+        # Update each local line item by excluding a list of adUnits
         updated_line_items = []
         for line_item in response['results']:
             if not line_item['isArchived']:
                 line_item['targeting']['inventoryTargeting']['excludedAdUnits'] = m9_ids.M9_IDS
                 updated_line_items.append(line_item)
 
-        # Update line items remotely.
+        # Push line items with updated targeting to the adserver.
         line_items = service.updateLineItems(updated_line_items)
 
         # Display results.
