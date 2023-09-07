@@ -1,14 +1,14 @@
 # Import appropriate modules from the client library.
 from googleads import ad_manager
-
+import config
 
 def main(client):
   # Initialize appropriate service.
-  ad_unit_service = client.GetService('InventoryService', version='v202211')
+  ad_unit_service = client.GetService('InventoryService', version=config.API_VERSION)
 
   # Create a statement to select ad units.
   statement = (
-        ad_manager.StatementBuilder(version=constants.API_VERSION)
+        ad_manager.StatementBuilder(version=config.API_VERSION)
         .Where(("name LIKE :name"))
         .WithBindVariable("name", search_key)
         #.Limit(100)
