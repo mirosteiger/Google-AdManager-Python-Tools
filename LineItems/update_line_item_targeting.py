@@ -4,7 +4,7 @@
 import sys
 import locale
 from googleads import ad_manager
-import constants
+import config
 import m9_ids
 
 locale.getdefaultlocale = lambda *args: ["de_DE", "UTF-8"]
@@ -20,20 +20,20 @@ ORDER_ID = 2603779404
 
 def main(client, order_id):
     # Initialize Line Item Service
-    service = client.GetService("LineItemService", version=constants.API_VERSION)
+    service = client.GetService("LineItemService", version=config.API_VERSION)
     get_line_items(service, order_id)
 
 # Returns an array of Line Item Ids
 def get_line_items(service, order_id):
 
 #    statement = (
- #       ad_manager.StatementBuilder(version=constants.API_VERSION)
+ #       ad_manager.StatementBuilder(version=config.API_VERSION)
   #      .Where(("orderId = :order_id"))
    #     .WithBindVariable("order_id", order_id)
     #    .Limit(1)
     #)
     statement = (
-        ad_manager.StatementBuilder(version=constants.API_VERSION)
+        ad_manager.StatementBuilder(version=config.API_VERSION)
         .Where(("orderId = :id"))
         .WithBindVariable("id", order_id)
         .Limit(100)
