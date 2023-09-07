@@ -152,3 +152,4 @@ cython_debug/
 #.idea/
 .DS_Store
 LineItems/m9_ids.py
+/data/*

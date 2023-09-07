@@ -37,7 +37,7 @@ def main(client, key_id):
             statement.offset += statement.limit
         else:
             break
-    np.savetxt("/data/gam_page_ids.txt", values, delimiter=" ", newline = "\n", fmt="%s")
+    np.savetxt("../data/gam_page_ids.txt", values, delimiter=" ", newline = "\n", fmt="%s")
 
     if response['totalResultSetSize'] == 0:
         print('No custom targeting values were updated.')

@@ -5,7 +5,7 @@
 
 '''
 
-API_VERSION = "v202211"         # API Version der Google API. Sollte nur geändert werden, wenn nicht mehr supported, da Google gerne Features ändert und damit einige Funktionen kaputt gehen könnten.
+API_VERSION = "v202308"         # API Version der Google API. Sollte nur geändert werden, wenn nicht mehr supported, da Google gerne Features ändert und damit einige Funktionen kaputt gehen könnten.
 
 ''' Default-Werte um Auftrag zu erstellen '''
 
