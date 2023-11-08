@@ -13,7 +13,7 @@ from googleads import ad_manager, errors
 import config
 from pick import pick
 from Utils.json_tools import read_from_json, get_field
-
+from data.targeting_keys import targeting_keys
 
 locale.getdefaultlocale = lambda *args: ["de_DE", "UTF-8"]
 
